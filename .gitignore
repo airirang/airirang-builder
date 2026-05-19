@@ -1,0 +1,65 @@
+# 3D 자산 (외부 다운로드, 용량 큼, 라이선스 별도)
+quaternius/
+asset/
+assets/
+*.obj
+*.fbx
+*.glb
+*.gltf
+*.blend
+*.dae
+*.usdz
+
+# Whitelist bundled preset meshes (shipped with the npm package)
+!src/presets/data/**/*.obj
+!src/presets/data/**/*.mtl
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 빌드 산출물
+dist/
+build/
+out/
+poc/output/
+
+# 환경변수·시크릿
+.env
+.env.local
+.env.*
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 로그
+*.log
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 테스트·빌드 임시 산출물
+*.tsbuildinfo
+coverage/
+.vitest-cache/
+tmp/
+tmp-e2e/
+
+# Workspace-local notes
+doc/
+CLAUDE.md

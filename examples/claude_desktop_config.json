@@ -1,0 +1,30 @@
+{
+  "_disclaimer": "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
+  "_doc": [
+    "Claude Desktop MCP 서버 등록 예시 — AIrirang Builder.",
+    "본 파일을 Claude Desktop 의 claude_desktop_config.json 에 병합하세요.",
+    "  Windows: %APPDATA%\\Claude\\claude_desktop_config.json",
+    "  macOS  : ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "  Linux  : ~/.config/Claude/claude_desktop_config.json",
+    "변경 후 Claude Desktop 을 완전히 종료(트레이 포함) 했다가 재시작.",
+    "최초 실행 시 npx 가 패키지를 캐시에 받아오므로 약간 시간이 걸립니다."
+  ],
+  "mcpServers": {
+    "airirang-builder": {
+      "command": "npx",
+      "args": ["-y", "airirang-builder", "serve"],
+      "env": {
+        "NODE_NO_WARNINGS": "1"
+      }
+    },
+    "airirang-builder-local": {
+      "_note": "리포를 직접 클론해서 개발하는 경우 — tsx 로 src/ 를 그대로 실행. cwd 를 본인 클론 경로로 바꾸세요.",
+      "command": "npx",
+      "args": ["tsx", "src/cli/bin.ts", "serve"],
+      "cwd": "C:/coding/Mine-Builder",
+      "env": {
+        "NODE_NO_WARNINGS": "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "house_1",
+    "displayName": "Medieval House (Plaster + Tile Roof)",
+    "objFile": "House_1.obj",
+    "defaultScale": 1.0,
+    "defaultPitch": 0.1,
+    "blockOverrides": {
+      "Plaster": "minecraft:sandstone",
+      "Wood": "minecraft:spruce_planks",
+      "Wood_Light": "minecraft:oak_planks"
+    },
+    "license": "CC0",
+    "author": "Quaternius",
+    "sourceUrl": "https://quaternius.com"
+  },
+  {
+    "id": "house_3",
+    "displayName": "Medieval House 3 (Stone + Timber)",
+    "objFile": "House_3.obj",
+    "defaultScale": 1.0,
+    "defaultPitch": 0.1,
+    "blockOverrides": {
+      "Wood": "minecraft:spruce_planks",
+      "Wood_Light": "minecraft:oak_planks"
+    },
+    "license": "CC0",
+    "author": "Quaternius",
+    "sourceUrl": "https://quaternius.com"
+  },
+  {
+    "id": "inn",
+    "displayName": "Medieval Inn",
+    "objFile": "Inn.obj",
+    "defaultScale": 1.0,
+    "defaultPitch": 0.1,
+    "blockOverrides": {
+      "Plaster": "minecraft:sandstone",
+      "Wood": "minecraft:spruce_planks",
+      "Wood_Light": "minecraft:oak_planks",
+      "RoofTiles_Red": "minecraft:bricks"
+    },
+    "license": "CC0",
+    "author": "Quaternius",
+    "sourceUrl": "https://quaternius.com"
+  },
+  {
+    "id": "mill",
+    "displayName": "Medieval Mill",
+    "objFile": "Mill.obj",
+    "defaultScale": 1.0,
+    "defaultPitch": 0.1,
+    "blockOverrides": {
+      "Plaster": "minecraft:sandstone",
+      "Wood": "minecraft:spruce_planks",
+      "Wood_Light": "minecraft:oak_planks"
+    },
+    "license": "CC0",
+    "author": "Quaternius",
+    "sourceUrl": "https://quaternius.com"
+  },
+  {
+    "id": "sawmill",
+    "displayName": "Medieval Sawmill",
+    "objFile": "Sawmill.obj",
+    "defaultScale": 1.0,
+    "defaultPitch": 0.1,
+    "blockOverrides": {
+      "Plaster": "minecraft:sandstone",
+      "Wood": "minecraft:spruce_planks",
+      "Wood_Light": "minecraft:oak_planks",
+      "RoofTiles_Red": "minecraft:bricks"
+    },
+    "license": "CC0",
+    "author": "Quaternius",
+    "sourceUrl": "https://quaternius.com"
+  }
+]
