@@ -89,6 +89,11 @@ export const JAVA_TO_BEDROCK: Readonly<Record<string, BedrockBlock>> = {
   'minecraft:andesite': { id: 'minecraft:andesite' },
   'minecraft:granite': { id: 'minecraft:granite' },
   'minecraft:diorite': { id: 'minecraft:diorite' },
+  'minecraft:deepslate': { id: 'minecraft:deepslate' },
+
+  // ── concrete (House_3 어두운 목조/기단 색 매칭) ─────────────────────────────
+  // Bedrock 1.21+ 는 colored concrete 를 색별 flatten id 로 노출.
+  'minecraft:brown_concrete': { id: 'minecraft:brown_concrete' },
 
   // ── wood plank variants (지붕·문틀·들보 색 매칭) ─────────────────────────────
   'minecraft:birch_planks': { id: 'minecraft:birch_planks' },
