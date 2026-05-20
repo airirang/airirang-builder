@@ -56,15 +56,18 @@ function resolveHouseObj(): string {
     'House_3.obj',
   );
   if (existsSync(assetPath)) return assetPath;
+  // 프리셋 .obj 정본은 core 패키지에 동봉됨 (java 사본은 0.2.2에서 제거).
   const presetPath = path.join(
     repoRoot,
+    '..',
+    'core',
     'src',
     'presets',
     'data',
     'House_3.obj',
   );
   if (existsSync(presetPath)) return presetPath;
-  throw new Error('House_3.obj not found in asset/ or src/presets/data/');
+  throw new Error('House_3.obj not found in asset/ or packages/core/src/presets/data/');
 }
 
 describe('end-to-end — Quaternius House_3 full pipeline', () => {
