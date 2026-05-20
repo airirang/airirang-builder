@@ -1,0 +1,79 @@
+{
+  "name": "airirang-builder-bedrock",
+  "version": "0.1.0",
+  "description": "AI-driven precise Minecraft (Bedrock Edition) building via 3D mesh voxelization + /fill greedy meshing + .mcaddon behavior pack. MCP server. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "type": "module",
+  "author": "AIrirang Studio <skseo@airirang.co.kr>",
+  "homepage": "https://github.com/airirang/airirang-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airirang/airirang-builder.git",
+    "directory": "packages/bedrock"
+  },
+  "bugs": {
+    "url": "https://github.com/airirang/airirang-builder/issues"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "mcaddon",
+    "mcp",
+    "voxelizer",
+    "ai",
+    "building",
+    "claude",
+    "airirang"
+  ],
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "airirang-builder-bedrock": "dist/cli/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./packager": {
+      "types": "./dist/packager/index.d.ts",
+      "import": "./dist/packager/index.js"
+    },
+    "./fill": {
+      "types": "./dist/fill/index.d.ts",
+      "import": "./dist/fill/index.js"
+    },
+    "./palette": {
+      "types": "./dist/palette/index.d.ts",
+      "import": "./dist/palette/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/index.d.ts",
+      "import": "./dist/mcp/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli/bin.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@airirang/builder-core": "0.1.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "commander": "^12.0.0",
+    "jszip": "^3.10.1",
+    "tsx": "^4.19.0",
+    "zod": "^4.4.3"
+  }
+}
