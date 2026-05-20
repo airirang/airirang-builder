@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * CLI subcommand — `serve` (Bedrock).
  *

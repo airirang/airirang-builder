@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * Datapack 빌더 — .mcfunction 파일을 Java Edition 1.20.5+ datapack 폴더 구조로 패키징.
  * Datapack builder — packages a .mcfunction file into a Java Edition 1.20.5+

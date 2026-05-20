@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 
 /**
  * Greedy meshing — voxel grid을 동일 블록의 축정렬 직육면체로 압축.

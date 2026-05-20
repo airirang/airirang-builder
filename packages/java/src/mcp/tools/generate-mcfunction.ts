@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * MCP tool — generate-mcfunction.
  * 명령 배열을 .mcfunction 텍스트 파일로 저장합니다.

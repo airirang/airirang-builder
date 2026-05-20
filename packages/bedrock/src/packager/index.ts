@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * Bedrock behavior pack 패커 — `.mcfunction` 라인 배열을 Bedrock Edition behavior
  * pack 폴더 + `.mcaddon` (zip) 으로 패키징.

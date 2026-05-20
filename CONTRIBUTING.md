@@ -10,13 +10,12 @@ Thanks for considering a contribution. This document is a bilingual quick-start 
 
 ## 라이선스 동의 / Licensing
 
-본 저장소는 **AGPL-3.0-or-later + 상업 라이선스 듀얼** 모델로 배포됩니다. 풀 리퀘스트를 보내면 다음에 동의한 것으로 간주합니다.
+본 저장소는 **Apache-2.0**로 배포됩니다. 풀 리퀘스트를 보내면 다음에 동의한 것으로 간주합니다.
 
 By submitting a pull request you agree that:
 
-1. 기여 코드는 본 저장소의 **AGPL-3.0-or-later** 조건으로 배포됩니다. Your contribution will be distributed under **AGPL-3.0-or-later** as part of this repo.
-2. 동일 코드가 향후 **상업 라이선스(LICENSE-COMMERCIAL.md)** 트랙을 통해 별도 약관으로 라이선싱될 수 있음에 동의합니다. The maintainer may also offer the same code under the project's **commercial license** track to other licensees.
-3. 본인이 작성했거나 적법한 권리를 보유한 코드만 제출합니다. You certify that you have the right to submit the work (DCO-style — see <https://developercertificate.org/>).
+1. 기여 코드는 본 저장소의 **Apache-2.0** 조건으로 배포됩니다. Your contribution will be distributed under **Apache-2.0** as part of this repo.
+2. 본인이 작성했거나 적법한 권리를 보유한 코드만 제출합니다. You certify that you have the right to submit the work (DCO-style — see <https://developercertificate.org/>).
 
 대규모 기능을 제안하기 전에는 GitHub Issue로 먼저 논의해 주세요. For substantial features, open a GitHub issue first to align on scope.
 
@@ -82,9 +81,9 @@ doc/                   # 결정사항·계획서·시장조사
 - JSDoc은 **한국어 + 영문 동시**. 외부 contributor가 읽을 수 있도록 영문이 따라옵니다. JSDoc is written in Korean **with** an English line so non-Korean speakers can read it.
 - 에러는 fail-fast로 명확한 메시지와 함께 `throw`. MCP 도구는 `safeHandler` 로 감싸 자동 변환. Throw clear errors; MCP tools wrap them via `safeHandler`.
 - UI 텍스트·CLI·로그에 이모지 사용 금지. No emojis in CLI / log / error messages.
-- **AGPL 헤더** — `src/` 파일 최상단에 1줄 필수 (타입 전용 파일·인덱스 re-export 파일은 생략 가능):
+- **라이선스 헤더** — `src/` 파일 최상단에 1줄 필수 (타입 전용 파일·인덱스 re-export 파일은 생략 가능):
   ```ts
-  /** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+  /** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
   ```
 - **단위(unit)** — 좌표는 voxel index(정수), 거리는 미터(float). 함수명에 단위 명시 권장 (`scaleMeters`, `pitchMeters`). Coordinates are integer voxel indices; distances are meters — surface the unit in the name.
 
@@ -132,8 +131,8 @@ PR 머지 조건 / PR merge requirements:
 기여 시 다음을 지켜 주세요. When contributing, please respect:
 
 - **Mojang Commercial Usage Guidelines** — 프로젝트 이름에 "Minecraft" 단어 추가 금지, 디스클레이머 문구 변경 금지, Mojang 자산(텍스처·사운드·로고) **0% 포함**. Do not bundle Mojang assets; do not rename around the disclaimer.
-- **디스클레이머 위치** — README, LICENSE, LICENSE-COMMERCIAL.md, CLI 첫 출력, MCP 서버 시작 로그에 모두 살아있어야 합니다. The disclaimer must remain on README, both LICENSE files, CLI startup, and MCP server boot log.
-- **프리셋 추가 시** — CC0 또는 양립 가능한 라이선스만. `manifest.json` 의 `author` / `sourceUrl` / `license` 필드를 반드시 채우세요. New presets must be CC0 (or AGPL-compatible) and ship attribution.
+- **디스클레이머 위치** — README, LICENSE, NOTICE, CLI 첫 출력, MCP 서버 시작 로그에 모두 살아있어야 합니다. The disclaimer must remain on README, LICENSE/NOTICE, CLI startup, and MCP server boot log.
+- **프리셋 추가 시** — CC0 또는 permissive 호환 라이선스만. `manifest.json` 의 `author` / `sourceUrl` / `license` 필드를 반드시 채우세요. New presets must be CC0 (or permissive-compatible) and ship attribution.
 
 ---
 
@@ -146,4 +145,4 @@ PR 머지 조건 / PR merge requirements:
 ## 문의 / Contact
 
 - 기능·버그 / Features·Bugs: GitHub Issues
-- 상업 라이선스 / Commercial license: 운영 주체 및 연락처는 [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) 참조
+- 문의 / General: <skseo@airirang.co.kr>

@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * CLI subcommand — `list-presets`.
  * 동봉된 Quaternius CC0 프리셋 5개를 표 형식으로 출력합니다.

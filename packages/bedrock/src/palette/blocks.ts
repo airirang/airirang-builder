@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * Java → Bedrock 블록 매핑 (v1, preset 범위).
  * Java → Bedrock block-id mapping (v1, preset-scoped).

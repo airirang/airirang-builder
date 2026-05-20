@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * AIrirang Builder CLI entry — `airirang-builder <command>`.
  *

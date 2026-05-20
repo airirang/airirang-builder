@@ -2,7 +2,7 @@
   "name": "@airirang/builder-core",
   "version": "0.1.0",
   "description": "Edition-agnostic core engine (voxelizer + greedy meshing + palette + presets) shared by airirang-builder Java/Bedrock packages. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
-  "license": "AGPL-3.0-or-later",
+  "license": "Apache-2.0",
   "private": false,
   "type": "module",
   "author": "AIrirang Studio <skseo@airirang.co.kr>",
@@ -25,7 +25,7 @@
     "dist/",
     "README.md",
     "LICENSE",
-    "LICENSE-COMMERCIAL.md"
+    "NOTICE"
   ],
   "exports": {
     ".": {
@@ -51,7 +51,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "vitest run"
+    "test": "vitest run --passWithNoTests"
   },
   "engines": {
     "node": ">=20"

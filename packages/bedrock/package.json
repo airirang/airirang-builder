@@ -2,7 +2,7 @@
   "name": "airirang-builder-bedrock",
   "version": "0.1.0",
   "description": "AI-driven precise Minecraft (Bedrock Edition) building via 3D mesh voxelization + /fill greedy meshing + .mcaddon behavior pack. MCP server. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
-  "license": "AGPL-3.0-or-later",
+  "license": "Apache-2.0",
   "private": false,
   "type": "module",
   "author": "AIrirang Studio <skseo@airirang.co.kr>",

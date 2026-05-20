@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * MCP tool 공용 헬퍼 — 응답 포맷 / 에러 래퍼.
  * Shared helpers for MCP tool handlers — response shaping and error wrapping.

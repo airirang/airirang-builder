@@ -2,7 +2,7 @@
   "name": "airirang-builder-monorepo",
   "version": "0.0.0",
   "description": "AIrirang Builder monorepo — @airirang/builder-core + airirang-builder (Java Edition). NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
-  "license": "AGPL-3.0-or-later",
+  "license": "Apache-2.0",
   "private": true,
   "type": "module",
   "workspaces": [

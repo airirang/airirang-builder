@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * MCP tool — quick-build.
  * **AIrirang Builder 의 핵심 차별점.** Claude 가 단 1번 호출로 전체 파이프라인

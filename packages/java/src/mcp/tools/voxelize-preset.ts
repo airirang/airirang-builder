@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * MCP tool — voxelize-preset.
  * 동봉 프리셋을 voxelize + greedy meshing 하여 /fill·/setblock 명령 배열을 반환.

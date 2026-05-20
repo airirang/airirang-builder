@@ -61,9 +61,9 @@ Initial public release: TypeScript MCP server ported from the verified Python PO
 
 ### License
 
-- 본 코드: **AGPL-3.0-or-later** ([LICENSE](LICENSE)) + 듀얼 상업 라이선스 ([LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md)).
+- 본 코드: **Apache-2.0** ([LICENSE](LICENSE)).
 - 동봉 프리셋: **CC0 1.0 Universal** — Quaternius, <https://quaternius.com>.
-- Mojang 자산 0% 포함. 디스클레이머(NOT AN OFFICIAL MINECRAFT PRODUCT) — README, LICENSE, LICENSE-COMMERCIAL.md, CLI 첫 출력, MCP 서버 시작 로그 전 지점에 명기.
+- Mojang 자산 0% 포함. 디스클레이머(NOT AN OFFICIAL MINECRAFT PRODUCT) — README, LICENSE, NOTICE, CLI 첫 출력, MCP 서버 시작 로그 전 지점에 명기.
 
 ### Known Limitations
 

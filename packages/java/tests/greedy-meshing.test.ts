@@ -1,4 +1,4 @@
-/** AIrirang Builder — AGPL-3.0-or-later. NOT AN OFFICIAL MINECRAFT PRODUCT. */
+/** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 
 /**
  * Greedy meshing 회귀 테스트 — Python POC `poc/test_greedy_meshing.py` 1:1 미러.
