@@ -168,7 +168,7 @@ npx airirang-builder serve
   - `eiffel-lattice`: ≥ **80%** `/fill` 압축 (격자 구조에서도)
 - **마크 1.21 실측**: 200 `/fill` 라인 → 박공지붕 + 창문까지 솟아오름.
 
-자세한 검증 데이터는 [doc/02-MCP서버-기술설계서.md](doc/02-MCP서버-기술설계서.md)와 [poc/](poc/) 참조.
+자세한 검증 데이터는 [poc/](poc/) 참조 (이 수치를 만든 POC 스크립트).
 
 ---
 

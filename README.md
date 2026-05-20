@@ -168,7 +168,7 @@ npx airirang-builder serve
   - `eiffel-lattice`: ≥ **80%** `/fill` compression (even on lattice structures)
 - **Minecraft 1.21 measured**: 200 `/fill` lines → pitched roof + windows render fully.
 
-See [doc/02-MCP서버-기술설계서.md](doc/02-MCP서버-기술설계서.md) and [poc/](poc/) for the underlying numbers.
+See [poc/](poc/) for the underlying numbers (the POC scripts that produced these metrics).
 
 ---
 

@@ -6,7 +6,7 @@
  *   loadScene → voxelizeScene(pitch=0.1) → greedyMeshing → splitForFillLimit
  *     → emitFillCommands → buildDatapack(tmp).
  *
- * CLAUDE.md / doc/06 §9 "E2E 검증값" 회귀 어서션:
+ * "E2E 검증값" 회귀 어서션:
  *   - voxel bbox = (21, 22, 23) — geometric truth, never moves.
  *   - /fill 라인 수 ≤ 500 — 회귀 검출용 상한. spec 의 ≤250 은 Python POC
  *     (trimesh fill) 기준이며, TS 구현(surface 샘플링 + flood-fill) 은 동일
