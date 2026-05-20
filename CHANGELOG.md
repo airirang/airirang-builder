@@ -20,6 +20,14 @@ This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ---
 
+## [0.2.1] — 2026-05-21
+
+### Fixed
+
+- **Preset builds were broken in 0.2.0**: the bundled `.obj` mesh files were missing from the published `airirang-builder-core` package (a `.gitignore` `*.obj` rule shadowed the new monorepo path, so CI never committed/published them). `list-presets` worked but `build`/`quick-build --preset …` failed with `ENOENT … House_3.obj`. The `.obj` assets are now shipped in `airirang-builder-core`. Caught by a clean-room `npm install` dogfood test.
+
+---
+
 ## [0.2.0] — 2026-05-21
 
 Multi-edition monorepo, Bedrock support, and an Apache-2.0 relicense. Published as three packages.

@@ -10,7 +10,10 @@ assets/
 *.dae
 *.usdz
 
-# Whitelist bundled preset meshes (shipped with the npm package)
+# Whitelist bundled preset meshes (shipped with the npm packages).
+# `**/` so it matches every workspace package (packages/*/src/presets/data), not just root src/.
+!**/src/presets/data/**/*.obj
+!**/src/presets/data/**/*.mtl
 !src/presets/data/**/*.obj
 !src/presets/data/**/*.mtl
 

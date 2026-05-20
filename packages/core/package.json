@@ -1,6 +1,6 @@
 {
   "name": "airirang-builder-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Edition-agnostic core engine (voxelizer + greedy meshing + palette + presets) shared by airirang-builder Java/Bedrock packages. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
   "license": "Apache-2.0",
   "private": false,
