@@ -1,0 +1,22 @@
+AIrirang Builder
+Copyright 2026 AIrirang Studio — contact: skseo@airirang.co.kr
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+------------------------------------------------------------------------
+NOT AN OFFICIAL MINECRAFT PRODUCT.
+NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+
+"Minecraft" is a registered trademark of Mojang Studios. This project
+bundles ZERO Mojang assets (textures, sounds, logos) in compliance with
+the Mojang Commercial Usage Guidelines. Block identifiers are resolved at
+runtime by the game itself.
+
+------------------------------------------------------------------------
+Bundled 3D assets — Quaternius (CC0 1.0 Universal)
+
+The preset models under packages/java/src/presets/data/ are from
+Quaternius' "Medieval Village Pack — Dec 2020", released under
+CC0 1.0 Universal (No Rights Reserved).
+Author: Quaternius — https://quaternius.com
+Attribution is not required by CC0 but is recorded here by convention.

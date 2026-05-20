@@ -6,7 +6,7 @@
  * 본 패키지는 표시 로직만 담당.
  */
 
-import { listPresets, getPresetDefaultPitch } from '@airirang/builder-core';
+import { listPresets, getPresetDefaultPitch } from 'airirang-builder-core';
 
 /** `airirang-builder-bedrock list-presets` 핸들러. */
 export async function runListPresets(): Promise<void> {

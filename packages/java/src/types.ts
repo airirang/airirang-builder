@@ -2,13 +2,13 @@
 /**
  * airirang-builder (Java Edition) — Public Type Definitions.
  *
- * Edition-agnostic 기하·블록·프리셋 타입은 `@airirang/builder-core` 에서 가져와
+ * Edition-agnostic 기하·블록·프리셋 타입은 `airirang-builder-core` 에서 가져와
  * 재수출하고, 본 파일은 Java Edition 고유 타입(`McVersion`, `DatapackOptions`)
  * 과 MCP 응답 envelope 만 정의합니다. 외부 사용자는 `import type { Preset, ... }
  * from 'airirang-builder'` 형태로 동일한 surface 를 그대로 사용합니다.
  *
  * Edition-agnostic geometry/block/preset types come from
- * `@airirang/builder-core`; this file adds Java Edition-only contracts
+ * `airirang-builder-core`; this file adds Java Edition-only contracts
  * (`McVersion`, `DatapackOptions`) plus the MCP tool result envelope.
  *
  * NOT AN OFFICIAL MINECRAFT PRODUCT.
@@ -25,7 +25,7 @@ export type {
   VoxelizeOptions,
   Preset,
   FillCommand,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 // ---------------------------------------------------------------------------
 // Datapack

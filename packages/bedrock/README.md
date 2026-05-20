@@ -89,7 +89,7 @@ A pitched roof with windows materializes in seconds.
 
 ## Why a separate Bedrock package?
 
-Bedrock and Java are different games with different file formats (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, different `/fill` syntax). Shipping them as **two packages** means you install only the one you need; the shared voxelizer / greedy mesher lives in `@airirang/builder-core` and is pulled in automatically.
+Bedrock and Java are different games with different file formats (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, different `/fill` syntax). Shipping them as **two packages** means you install only the one you need; the shared voxelizer / greedy mesher lives in `airirang-builder-core` and is pulled in automatically.
 
 | You play… | Install |
 |---|---|

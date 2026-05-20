@@ -10,11 +10,11 @@
 
 import { z } from 'zod';
 
-import { greedyMeshing, splitForFillLimit, emitFillCommands } from '@airirang/builder-core';
-import { BlockMatcher, linearToSrgbU8 } from '@airirang/builder-core';
-import { getPreset, resolvePresetObjPath } from '@airirang/builder-core';
+import { greedyMeshing, splitForFillLimit, emitFillCommands } from 'airirang-builder-core';
+import { BlockMatcher, linearToSrgbU8 } from 'airirang-builder-core';
+import { getPreset, resolvePresetObjPath } from 'airirang-builder-core';
 import type { Material } from '../../types.js';
-import { applyScaleToScene, loadSceneAsync, voxelizeScene, type UpAxis } from '@airirang/builder-core';
+import { applyScaleToScene, loadSceneAsync, voxelizeScene, type UpAxis } from 'airirang-builder-core';
 import { safeHandler, toolOk } from './shared.js';
 
 export const name = 'voxelize-preset';

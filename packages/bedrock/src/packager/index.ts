@@ -32,7 +32,7 @@ import JSZip from 'jszip';
 
 // Cuboid / FillCommand 는 core 의 공용 타입. 본 패커는 라인 단위 string 만 받으나
 // 시그니처 명확성을 위해 FillCommand 타입을 재노출.
-import type { FillCommand } from '@airirang/builder-core';
+import type { FillCommand } from 'airirang-builder-core';
 
 /**
  * Bedrock semver-like 3-tuple. manifest.json `header.version` 등에서 사용.

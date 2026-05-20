@@ -15,16 +15,16 @@ import { existsSync } from 'node:fs';
 import * as path from 'node:path';
 
 import { buildDatapack, formatInstallMessage } from '../../datapack/index.js';
-import { greedyMeshing, splitForFillLimit, emitFillCommands } from '@airirang/builder-core';
-import { BlockMatcher, linearToSrgbU8 } from '@airirang/builder-core';
-import { getPreset, resolvePresetObjPath } from '@airirang/builder-core';
+import { greedyMeshing, splitForFillLimit, emitFillCommands } from 'airirang-builder-core';
+import { BlockMatcher, linearToSrgbU8 } from 'airirang-builder-core';
+import { getPreset, resolvePresetObjPath } from 'airirang-builder-core';
 import type { Material, McVersion } from '../../types.js';
 import {
   applyScaleToScene,
   loadSceneAsync,
   voxelizeScene,
   type UpAxis,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 /** `build` 서브커맨드 옵션. */
 export interface BuildCommandOptions {

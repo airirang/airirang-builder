@@ -89,7 +89,7 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 
 ## 왜 베드락은 별도 패키지인가
 
-베드락과 자바는 파일 포맷이 다른 별개의 게임입니다 (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, `/fill` 문법 차이). 그래서 **두 개의 npm 패키지**로 분리해 자기 에디션만 설치하면 되도록 했습니다. voxelizer / greedy mesher는 공유 `@airirang/builder-core`에 한 벌만 두고 자동으로 끌려옵니다.
+베드락과 자바는 파일 포맷이 다른 별개의 게임입니다 (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, `/fill` 문법 차이). 그래서 **두 개의 npm 패키지**로 분리해 자기 에디션만 설치하면 되도록 했습니다. voxelizer / greedy mesher는 공유 `airirang-builder-core`에 한 벌만 두고 자동으로 끌려옵니다.
 
 | 어느 에디션을 플레이하시나요 | 설치 |
 |---|---|

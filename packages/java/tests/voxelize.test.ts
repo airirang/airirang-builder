@@ -16,7 +16,7 @@ import {
   voxelizeMesh,
   voxelizeScene,
   type MeshInput,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 /** 축정렬 [0,L]^3 큐브 메시 — 12 삼각형으로 6 면 트라이앵글화. */
 function unitCubeMesh(L: number): MeshInput {

@@ -1,6 +1,6 @@
 /** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
- * @airirang/builder-core — Public API.
+ * airirang-builder-core — Public API.
  *
  * Edition (Java / Bedrock) 무관한 핵심 엔진의 공개 진입점.
  * voxelizer / greedy-meshing / palette / presets 의 curated re-export 입니다.

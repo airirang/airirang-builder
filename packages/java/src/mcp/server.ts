@@ -13,7 +13,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
-import { listPresets } from '@airirang/builder-core';
+import { listPresets } from 'airirang-builder-core';
 
 import * as listPresetsTool from './tools/list-presets.js';
 import * as voxelizePresetTool from './tools/voxelize-preset.js';

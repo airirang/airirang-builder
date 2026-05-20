@@ -30,17 +30,17 @@ import { fileURLToPath } from 'node:url';
 
 import { describe, expect, it } from 'vitest';
 
-import { BlockMatcher, linearToSrgbU8 } from '@airirang/builder-core';
+import { BlockMatcher, linearToSrgbU8 } from 'airirang-builder-core';
 import {
   emitFillCommands,
   greedyMeshing,
   splitForFillLimit,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 import {
   buildDatapack,
   FUNCTION_FOLDER,
 } from '../src/datapack/index.js';
-import { loadSceneAsync, voxelizeScene } from '@airirang/builder-core';
+import { loadSceneAsync, voxelizeScene } from 'airirang-builder-core';
 import type { Material } from '../src/types.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));

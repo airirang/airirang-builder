@@ -10,12 +10,12 @@
 
 import { describe, expect, it } from 'vitest';
 
-import type { BlockId, Cuboid, Voxel } from '@airirang/builder-core';
+import type { BlockId, Cuboid, Voxel } from 'airirang-builder-core';
 import {
   greedyMeshing,
   MAX_FILL_BLOCKS,
   splitForFillLimit,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 /**
  * 모든 (voxel, block) 쌍이 cuboid 정확히 1개로 커버되는지 검증.

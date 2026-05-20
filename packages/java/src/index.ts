@@ -4,11 +4,11 @@
  *
  * `import { voxelize, greedyMesh, buildDatapack, BlockMatcher, MCP_TOOLS }
  * from 'airirang-builder'` 형태의 외부 사용자 진입점. 기하·매칭·프리셋 등
- * edition 무관한 API 는 `@airirang/builder-core` 를 그대로 재수출하고, Java
+ * edition 무관한 API 는 `airirang-builder-core` 를 그대로 재수출하고, Java
  * Edition 고유 부분(datapack / mcp) 만 본 패키지가 추가합니다.
  *
  * The single public entry consumed by Java Edition users. Edition-agnostic
- * APIs are re-exported from `@airirang/builder-core`; Java-specific surfaces
+ * APIs are re-exported from `airirang-builder-core`; Java-specific surfaces
  * (datapack builder, MCP server + 7 tools) are added on top.
  */
 
@@ -58,7 +58,7 @@ export {
   getPresetDefaultPitch,
   getPresetDataDir,
   setPresetDataDir,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 export type {
   LoadGltfOptions,
   UpAxis,
@@ -71,7 +71,7 @@ export type {
   PaletteEntry,
   Lab,
   Rgb,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 // ---------------------------------------------------------------------------
 // Datapack — Java Edition pack.mcmeta + function packaging

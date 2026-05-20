@@ -6,7 +6,7 @@
 
 import { z } from 'zod';
 
-import { listPresets } from '@airirang/builder-core';
+import { listPresets } from 'airirang-builder-core';
 import { safeHandler, toolOk } from './shared.js';
 
 export const name = 'list-presets';

@@ -25,7 +25,7 @@
  * NOT AN OFFICIAL MINECRAFT PRODUCT.
  */
 
-import type { Cuboid } from '@airirang/builder-core';
+import type { Cuboid } from 'airirang-builder-core';
 import type {
   BedrockBlock,
   BedrockMapResult,

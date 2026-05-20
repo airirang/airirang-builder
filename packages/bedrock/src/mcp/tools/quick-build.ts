@@ -24,7 +24,7 @@ import {
   voxelizeScene,
   type Material,
   type UpAxis,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 import { emitBedrockFill } from '../../fill/index.js';
 import { buildBehaviorPack, formatInstallMessage } from '../../packager/index.js';

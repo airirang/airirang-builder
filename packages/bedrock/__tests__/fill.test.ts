@@ -11,8 +11,8 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { MAX_FILL_BLOCKS, splitForFillLimit } from '@airirang/builder-core';
-import type { Cuboid } from '@airirang/builder-core';
+import { MAX_FILL_BLOCKS, splitForFillLimit } from 'airirang-builder-core';
+import type { Cuboid } from 'airirang-builder-core';
 
 import {
   emitBedrockFill,

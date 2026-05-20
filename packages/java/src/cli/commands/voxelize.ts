@@ -15,15 +15,15 @@ import { promises as fs } from 'node:fs';
 import { existsSync } from 'node:fs';
 import * as path from 'node:path';
 
-import { greedyMeshing, splitForFillLimit, emitFillCommands } from '@airirang/builder-core';
-import { BlockMatcher, linearToSrgbU8 } from '@airirang/builder-core';
+import { greedyMeshing, splitForFillLimit, emitFillCommands } from 'airirang-builder-core';
+import { BlockMatcher, linearToSrgbU8 } from 'airirang-builder-core';
 import type { Material } from '../../types.js';
 import {
   applyScaleToScene,
   loadSceneAsync,
   voxelizeScene,
   type UpAxis,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 /** `voxelize` 서브커맨드 옵션. commander option 타입 매핑과 1:1. */
 export interface VoxelizeCommandOptions {

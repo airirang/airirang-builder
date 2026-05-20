@@ -16,7 +16,7 @@ import {
   PALETTE,
   linearToSrgbU8,
   rgbToLab,
-} from '@airirang/builder-core';
+} from 'airirang-builder-core';
 
 const close = (a: number, b: number, eps = 0.5): boolean =>
   Math.abs(a - b) <= eps;

@@ -31,8 +31,8 @@ import {
   loadSceneAsync,
   splitForFillLimit,
   voxelizeScene,
-} from '@airirang/builder-core';
-import type { Material } from '@airirang/builder-core';
+} from 'airirang-builder-core';
+import type { Material } from 'airirang-builder-core';
 
 import { emitBedrockFill } from '../src/fill/emitter.js';
 import { buildBehaviorPack } from '../src/packager/index.js';

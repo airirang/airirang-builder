@@ -11,7 +11,7 @@
  * 와 `dist/presets/data/` 까지 폴백 탐색합니다.
  *
  * Bundled preset loader for the 5 Quaternius CC0 buildings. The metadata
- * (`manifest.json`) ships with `@airirang/builder-core`, but the `.obj`/`.mtl`
+ * (`manifest.json`) ships with `airirang-builder-core`, but the `.obj`/`.mtl`
  * assets ship with the consuming edition package (currently
  * `airirang-builder` — Java Edition). When the local `data/` directory is
  * absent the loader walks up to the consumer to find the assets.

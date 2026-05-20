@@ -9,7 +9,7 @@ on:
 
 jobs:
   publish:
-    name: Build & Publish (airirang-builder)
+    name: Build & Publish (core + java + bedrock)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,24 +29,51 @@ jobs:
       - name: Install dependencies (workspaces)
         run: npm install
 
-      - name: Build (tsc) — core then java
+      - name: Build (tsc) — core then editions
         run: |
-          npm run build --workspace=@airirang/builder-core
+          npm run build --workspace=airirang-builder-core
           npm run build --workspace=airirang-builder
+          npm run build --workspace=airirang-builder-bedrock
 
-      - name: Test (vitest) — airirang-builder
-        run: npm test --workspace=airirang-builder
+      - name: Test (vitest) — java + bedrock
+        run: |
+          npm test --workspace=airirang-builder
+          npm test --workspace=airirang-builder-bedrock
 
-      - name: npm pack --dry-run (airirang-builder)
-        working-directory: packages/java
-        run: npm pack --dry-run
+      # Publish order matters: core first (java/bedrock depend on it).
+      # Each step is idempotent — skips if that exact version is already on npm.
+      # A failed publish fails the job and stops later steps (fail-fast),
+      # so a broken release never publishes editions against a missing core.
+      - name: Publish airirang-builder-core
+        working-directory: packages/core
+        run: |
+          PKG="$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")"
+          if npm view "$PKG" version >/dev/null 2>&1; then
+            echo "::notice::$PKG already published — skipping (idempotent)."
+          else
+            npm publish --access public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish airirang-builder to npm (skip if version already published)
+      - name: Publish airirang-builder (Java)
         working-directory: packages/java
         run: |
           PKG="$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")"
           if npm view "$PKG" version >/dev/null 2>&1; then
-            echo "::notice::$PKG already published — skipping publish (idempotent)."
+            echo "::notice::$PKG already published — skipping (idempotent)."
+          else
+            npm publish --access public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish airirang-builder-bedrock
+        working-directory: packages/bedrock
+        run: |
+          PKG="$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")"
+          if npm view "$PKG" version >/dev/null 2>&1; then
+            echo "::notice::$PKG already published — skipping (idempotent)."
           else
             npm publish --access public
           fi

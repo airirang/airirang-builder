@@ -1,6 +1,6 @@
 /** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
- * @airirang/builder-core — Public Type Definitions.
+ * airirang-builder-core — Public Type Definitions.
  *
  * 모든 core 모듈(voxelizer · greedy-meshing · palette · presets)이 공통으로
  * import 하는 핵심 타입을 정의합니다. edition (Java / Bedrock) 무관한 순수

@@ -8,7 +8,7 @@
  * the bundle from the shell.
  */
 
-import { listPresets, getPresetDefaultPitch } from '@airirang/builder-core';
+import { listPresets, getPresetDefaultPitch } from 'airirang-builder-core';
 
 /** `airirang-builder list-presets` 핸들러. process.exitCode 만 설정, throw 금지. */
 export async function runListPresets(): Promise<void> {

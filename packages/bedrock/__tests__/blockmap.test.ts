@@ -8,7 +8,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { listPresets } from '@airirang/builder-core';
+import { listPresets } from 'airirang-builder-core';
 import {
   BEDROCK_FALLBACK,
   JAVA_TO_BEDROCK,
