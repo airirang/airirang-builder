@@ -3,7 +3,7 @@
 /**
  * Bedrock behavior pack packager 테스트 — manifest.json 스키마
  * (format_version=2, header.uuid v4, modules[].uuid v4, min_engine_version 3-tuple)
- * 와 산출된 `.mcaddon` zip 내부에 manifest + functions/<id>.mcfunction 이
+ * 와 산출된 `.mcpack` zip 내부에 manifest + functions/<id>.mcfunction 이
  * 들어 있는지 검증.
  */
 
@@ -19,7 +19,7 @@ import { buildBehaviorPack } from '../src/packager/index.js';
 const UUID_V4_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
+describe('buildBehaviorPack — manifest schema + .mcpack contents', () => {
   let workDir: string;
 
   beforeEach(async () => {
@@ -43,7 +43,7 @@ describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
     });
 
     await expect(stat(result.packRoot)).resolves.toBeTruthy();
-    await expect(stat(result.mcaddonPath)).resolves.toBeTruthy();
+    await expect(stat(result.mcpackPath)).resolves.toBeTruthy();
     await expect(stat(result.functionPath)).resolves.toBeTruthy();
 
     expect(result.headerUuid).toMatch(UUID_V4_RE);
@@ -95,7 +95,7 @@ describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
     expect(manifest.header.min_engine_version).toEqual([1, 21, 50]);
   });
 
-  it('.mcaddon zip 안에 manifest.json 과 functions/<id>.mcfunction 이 들어있다', async () => {
+  it('.mcpack zip 안에 manifest.json 과 functions/<id>.mcfunction 이 들어있다', async () => {
     const lines = [
       'fill ~0 ~0 ~0 ~5 ~5 ~5 minecraft:stone',
       'fill ~0 ~6 ~0 ~5 ~10 ~5 minecraft:spruce_planks',
@@ -109,7 +109,7 @@ describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
       outRoot: workDir,
     });
 
-    const zipBuf = await readFile(result.mcaddonPath);
+    const zipBuf = await readFile(result.mcpackPath);
     const zip = await JSZip.loadAsync(zipBuf);
 
     expect(zip.file('manifest.json')).not.toBeNull();
@@ -126,7 +126,7 @@ describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
     expect(written).toEqual(lines);
   });
 
-  it('빈 mcfunctionLines 도 manifest 와 .mcaddon 을 산출한다', async () => {
+  it('빈 mcfunctionLines 도 manifest 와 .mcpack 을 산출한다', async () => {
     const result = await buildBehaviorPack({
       mcfunctionLines: [],
       name: 'airirang_empty',
@@ -136,7 +136,7 @@ describe('buildBehaviorPack — manifest schema + .mcaddon contents', () => {
     });
 
     expect(result.lineCount).toBe(0);
-    const zip = await JSZip.loadAsync(await readFile(result.mcaddonPath));
+    const zip = await JSZip.loadAsync(await readFile(result.mcpackPath));
     expect(zip.file('manifest.json')).not.toBeNull();
     expect(zip.file('functions/noop.mcfunction')).not.toBeNull();
     const body = await zip.file('functions/noop.mcfunction')!.async('string');

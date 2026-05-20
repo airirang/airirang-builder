@@ -2,7 +2,7 @@
 
 **English** | [한국어](README.ko.md)
 
-> **Build precise Minecraft *Bedrock* structures from a single natural-language prompt — installed by double-clicking a `.mcaddon`.**
+> **Build precise Minecraft *Bedrock* structures from a single natural-language prompt — installed by double-clicking a `.mcpack`.**
 
 > **NOT AN OFFICIAL MINECRAFT PRODUCT.**
 > **NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
@@ -12,7 +12,7 @@
 [![MCP](https://img.shields.io/badge/MCP-stdio-7C3AED.svg)](https://modelcontextprotocol.io)
 [![Bedrock](https://img.shields.io/badge/Minecraft-Bedrock%201.21%2B-1C8C3F.svg)](https://www.minecraft.net/)
 
-`airirang-builder-bedrock` is the **Bedrock Edition** sibling of [`airirang-builder`](https://www.npmjs.com/package/airirang-builder). It collapses the full **3D mesh (.obj/.glb) → voxel → greedy-meshed `/fill` → behavior pack** pipeline into a single call and ships the result as a `.mcaddon` you install by **double-clicking**.
+`airirang-builder-bedrock` is the **Bedrock Edition** sibling of [`airirang-builder`](https://www.npmjs.com/package/airirang-builder). It collapses the full **3D mesh (.obj/.glb) → voxel → greedy-meshed `/fill` → behavior pack** pipeline into a single call and ships the result as a `.mcpack` you install by **double-clicking**.
 
 Bedrock is what most kids on phones, tablets, consoles and Windows 10/11 actually play. No JSON config, no `/reload`, no datapack folder hunt — just double-click.
 
@@ -32,7 +32,7 @@ npm install -g airirang-builder-bedrock
 
 Requirements: **Node 20+**, Minecraft **Bedrock Edition 1.21+** (Windows 10/11, mobile, console, or Education Edition).
 
-### 2. Build a `.mcaddon`
+### 2. Build a `.mcpack`
 
 Two paths — pick one.
 
@@ -49,7 +49,7 @@ Produces:
 
 ```
 out/airirang-house3/           ← behavior pack folder
-out/airirang-house3.mcaddon    ← double-clickable installer
+out/airirang-house3.mcpack    ← double-clickable installer
 ```
 
 **Path B — any MCP client (Claude, ChatGPT, Gemini, Cursor, VS Code, …):**
@@ -69,13 +69,13 @@ Register the server once:
 
 Then ask in chat:
 
-> "Build the `house_3` preset as a Bedrock .mcaddon into `./out`."
+> "Build the `house_3` preset as a Bedrock .mcpack into `./out`."
 
-The client makes a single `quick-build` MCP call and emits the same `.mcaddon`.
+The client makes a single `quick-build` MCP call and emits the same `.mcpack`.
 
 ### 3. Install in Minecraft (Bedrock)
 
-1. **Double-click** `airirang-house3.mcaddon` — Minecraft (Bedrock) auto-imports it.
+1. **Double-click** `airirang-house3.mcpack` — Minecraft (Bedrock) auto-imports it.
 2. Create or edit a world → **Behavior Packs** → activate *airirang-house3*.
 3. In-game:
 
@@ -89,7 +89,7 @@ A pitched roof with windows materializes in seconds.
 
 ## Why a separate Bedrock package?
 
-Bedrock and Java are different games with different file formats (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, different `/fill` syntax). Shipping them as **two packages** means you install only the one you need; the shared voxelizer / greedy mesher lives in `airirang-builder-core` and is pulled in automatically.
+Bedrock and Java are different games with different file formats (`.mcpack` vs datapack, `manifest.json` vs `pack.mcmeta`, different `/fill` syntax). Shipping them as **two packages** means you install only the one you need; the shared voxelizer / greedy mesher lives in `airirang-builder-core` and is pulled in automatically.
 
 | You play… | Install |
 |---|---|
@@ -105,7 +105,7 @@ The `serve` command starts a stdio MCP server compatible with **any MCP client**
 | # | Tool | Purpose |
 |---|---|---|
 | 1 | `list-presets` | Returns the bundled CC0 preset catalog (5 Quaternius models). |
-| 2 | **`quick-build`** | **One-shot:** preset/OBJ/GLB → voxelize → greedy → Bedrock `/fill` → `.mcaddon`. |
+| 2 | **`quick-build`** | **One-shot:** preset/OBJ/GLB → voxelize → greedy → Bedrock `/fill` → `.mcpack`. |
 
 ### `quick-build` example call
 
@@ -131,11 +131,11 @@ Response (summary):
 {
   "ok": true,
   "behaviorPackRoot": "./out/airirang-house3",
-  "mcaddonPath": "./out/airirang-house3.mcaddon",
+  "mcpackPath": "./out/airirang-house3.mcpack",
   "lineCount": 187,
   "cuboidCount": 184,
   "voxelCount": 9421,
-  "installMessage": "Double-click airirang-house3.mcaddon, activate in world Behavior Packs, then /function airirang-house3"
+  "installMessage": "Double-click airirang-house3.mcpack, activate in world Behavior Packs, then /function airirang-house3"
 }
 ```
 
@@ -149,7 +149,7 @@ Pass `objPath` instead of `presetId` to build from your own `.obj` / `.glb` / `.
 # Preset catalog
 npx airirang-builder-bedrock list-presets
 
-# preset/OBJ → ready-to-install .mcaddon
+# preset/OBJ → ready-to-install .mcpack
 npx airirang-builder-bedrock build \
   --preset house_3 \
   --name airirang-house3 \

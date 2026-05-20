@@ -1,20 +1,20 @@
 /** AIrirang Builder — Apache-2.0. NOT AN OFFICIAL MINECRAFT PRODUCT. */
 /**
  * Bedrock behavior pack 패커 — `.mcfunction` 라인 배열을 Bedrock Edition behavior
- * pack 폴더 + `.mcaddon` (zip) 으로 패키징.
+ * pack 폴더 + `.mcpack` (zip) 으로 패키징.
  *
  * Bedrock behavior pack builder — packages an in-memory `.mcfunction` line
  * array into a Bedrock Edition behavior pack folder and bundles it as a
- * double-clickable `.mcaddon` zip.
+ * double-clickable `.mcpack` zip.
  *
  * 출력 구조 / Output layout:
  *   <outRoot>/<name>/
  *       manifest.json
  *       functions/<functionId>.mcfunction
- *   <outRoot>/<name>.mcaddon          (zip of the folder above)
+ *   <outRoot>/<name>.mcpack          (zip of the folder above)
  *
  * 설치 방법 / Install:
- *   1. `<name>.mcaddon` 더블클릭 — Minecraft (Bedrock) 가 자동으로 임포트
+ *   1. `<name>.mcpack` 더블클릭 — Minecraft (Bedrock) 가 자동으로 임포트
  *   2. 월드 설정 > Behavior Packs 에서 활성화
  *   3. 게임 내: /function <functionId>
  *
@@ -52,8 +52,8 @@ export interface BuildBehaviorPackOptions {
    */
   mcfunctionLines: readonly FillCommand[];
   /**
-   * 패키지 이름 — 폴더명 + `.mcaddon` 파일명 + manifest header.name 으로 사용.
-   * Pack name used for the folder, the `.mcaddon` filename and `header.name`.
+   * 패키지 이름 — 폴더명 + `.mcpack` 파일명 + manifest header.name 으로 사용.
+   * Pack name used for the folder, the `.mcpack` filename and `header.name`.
    * @example 'house_3'
    */
   name: string;
@@ -81,8 +81,8 @@ export interface BuildBehaviorPackOptions {
    */
   minEngineVersion?: BedrockVersion;
   /**
-   * 출력 루트 디렉토리 — staging 폴더와 `.mcaddon` 모두 여기에 생성됩니다.
-   * Root output directory; both the staged folder and the `.mcaddon` are
+   * 출력 루트 디렉토리 — staging 폴더와 `.mcpack` 모두 여기에 생성됩니다.
+   * Root output directory; both the staged folder and the `.mcpack` are
    * written under here.
    */
   outRoot: string;
@@ -94,8 +94,8 @@ export interface BuildBehaviorPackOptions {
 export interface BuildBehaviorPackResult {
   /** Staging 폴더 절대 경로 (`<outRoot>/<name>/`). */
   packRoot: string;
-  /** `.mcaddon` zip 파일 절대 경로 (`<outRoot>/<name>.mcaddon`). */
-  mcaddonPath: string;
+  /** `.mcpack` zip 파일 절대 경로 (`<outRoot>/<name>.mcpack`). */
+  mcpackPath: string;
   /** 작성된 `.mcfunction` 파일 절대 경로. */
   functionPath: string;
   /** 작성된 함수의 라인 수 / Number of mcfunction lines written. */
@@ -109,10 +109,10 @@ export interface BuildBehaviorPackResult {
 const DEFAULT_MIN_ENGINE_VERSION: BedrockVersion = [1, 21, 0];
 
 /**
- * In-memory `.mcfunction` 라인을 Bedrock behavior pack 으로 빌드 + zip(`.mcaddon`).
+ * In-memory `.mcfunction` 라인을 Bedrock behavior pack 으로 빌드 + zip(`.mcpack`).
  *
  * Build an in-memory `.mcfunction` line array into a Bedrock behavior pack
- * folder layout and bundle it as a `.mcaddon` zip.
+ * folder layout and bundle it as a `.mcpack` zip.
  *
  * @param options See {@link BuildBehaviorPackOptions}.
  * @returns 빌드 결과 메타데이터 / Build metadata.
@@ -173,8 +173,8 @@ export async function buildBehaviorPack(
   const functionPath = path.join(functionsDir, `${functionId}.mcfunction`);
   await fs.writeFile(functionPath, mcfunctionBody, 'utf-8');
 
-  const mcaddonPath = path.resolve(outRoot, `${name}.mcaddon`);
-  await fs.rm(mcaddonPath, { force: true });
+  const mcpackPath = path.resolve(outRoot, `${name}.mcpack`);
+  await fs.rm(mcpackPath, { force: true });
 
   const zip = new JSZip();
   zip.file('manifest.json', manifestJson);
@@ -184,11 +184,11 @@ export async function buildBehaviorPack(
     compression: 'DEFLATE',
     compressionOptions: { level: 6 },
   });
-  await fs.writeFile(mcaddonPath, zipBuffer);
+  await fs.writeFile(mcpackPath, zipBuffer);
 
   return {
     packRoot,
-    mcaddonPath,
+    mcpackPath,
     functionPath,
     lineCount: mcfunctionLines.length,
     headerUuid,
@@ -209,10 +209,10 @@ export function formatInstallMessage(
 ): string {
   return [
     `[ok] bedrock behavior pack built: ${result.packRoot}`,
-    `     .mcaddon: ${result.mcaddonPath} (${result.lineCount} lines)`,
+    `     .mcpack: ${result.mcpackPath} (${result.lineCount} lines)`,
     '',
     'Install:',
-    `  1. Double-click ${path.basename(result.mcaddonPath)} — Minecraft (Bedrock) imports it`,
+    `  1. Double-click ${path.basename(result.mcpackPath)} — Minecraft (Bedrock) imports it`,
     '  2. World settings > Behavior Packs > activate this pack',
     '  3. Stand where you want the build to appear (commands use ~ relative coords)',
     `  4. In game: /function ${functionId}`,

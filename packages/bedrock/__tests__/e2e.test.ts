@@ -9,7 +9,7 @@
  * 회귀 어서션:
  *   - voxel bbox = (21, 22, 23) — 기하학적 사실, 변하지 않음.
  *   - Bedrock 라인 수 ≤ 500 — Java E2E 와 동일한 상한 (회귀 안전망).
- *   - `.mcaddon` zip 안에 manifest.json + functions/house_3.mcfunction 존재.
+ *   - `.mcpack` zip 안에 manifest.json + functions/house_3.mcfunction 존재.
  *
  * Asset (`asset/Medieval Village Pack - Dec 2020/.../House_3.obj`) 가 없으면
  * `packages/java/src/presets/data/House_3.obj` 로 폴백 — 두 사본은 동일.
@@ -67,7 +67,7 @@ function resolveHouseObj(): string {
 
 describe('end-to-end (bedrock) — Quaternius House_3 full pipeline', () => {
   it(
-    'loadScene → voxelize → greedy → bedrock fill → behavior pack — bbox (21,22,23), ≤500 lines, .mcaddon valid',
+    'loadScene → voxelize → greedy → bedrock fill → behavior pack — bbox (21,22,23), ≤500 lines, .mcpack valid',
     async () => {
       const objPath = resolveHouseObj();
       const scene = await loadSceneAsync(objPath);
@@ -109,7 +109,7 @@ describe('end-to-end (bedrock) — Quaternius House_3 full pipeline', () => {
         });
 
         await expect(stat(build.packRoot)).resolves.toBeTruthy();
-        await expect(stat(build.mcaddonPath)).resolves.toBeTruthy();
+        await expect(stat(build.mcpackPath)).resolves.toBeTruthy();
         await expect(stat(build.functionPath)).resolves.toBeTruthy();
         expect(build.lineCount).toBe(lines.length);
 
@@ -130,7 +130,7 @@ describe('end-to-end (bedrock) — Quaternius House_3 full pipeline', () => {
           .filter((l) => l.length > 0);
         expect(writtenLines.length).toBe(lines.length);
 
-        const zip = await JSZip.loadAsync(await readFile(build.mcaddonPath));
+        const zip = await JSZip.loadAsync(await readFile(build.mcpackPath));
         expect(zip.file('manifest.json')).not.toBeNull();
         expect(zip.file('functions/house_3.mcfunction')).not.toBeNull();
         const zippedMcf = await zip

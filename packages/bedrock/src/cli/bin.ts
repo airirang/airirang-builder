@@ -4,13 +4,13 @@
  * airirang-builder-bedrock CLI entry — `airirang-builder-bedrock <command>`.
  *
  * commander 기반. Java 패키지 CLI 와 동일한 서브커맨드 인터페이스를 유지하되
- * 출력은 Bedrock `.mcaddon` 으로 교체:
- *   - `build`         : preset/obj → voxelize+greedy → Bedrock fill → .mcaddon
+ * 출력은 Bedrock `.mcpack` 으로 교체:
+ *   - `build`         : preset/obj → voxelize+greedy → Bedrock fill → .mcpack
  *   - `serve`         : MCP stdio 서버 부팅
  *   - `list-presets`  : 동봉된 Quaternius CC0 프리셋 5개 표 출력
  *
  * Commander-based Bedrock CLI mirroring the Java surface (build/serve/list-presets)
- * but emitting `.mcaddon` behavior packs.
+ * but emitting `.mcpack` behavior packs.
  */
 
 import { Command } from 'commander';
@@ -50,7 +50,7 @@ export function createProgram(): Command {
   program
     .command('build')
     .description(
-      'preset 또는 .obj → 완성 .mcaddon 일괄 빌드 / Preset or OBJ → ready-to-install .mcaddon',
+      'preset 또는 .obj → 완성 .mcpack 일괄 빌드 / Preset or OBJ → ready-to-install .mcpack',
     )
     .option('--preset <id>', '프리셋 id (list-presets 참조). --obj 와 둘 중 하나만.')
     .option('--obj <path>', '사용자 .obj 경로. --preset 와 둘 중 하나만.')
@@ -62,7 +62,7 @@ export function createProgram(): Command {
       'min_engine_version (예: 1.21.0). 기본 1.21.0.',
       '1.21.0',
     )
-    .requiredOption('--out-root <dir>', 'behavior pack 폴더와 .mcaddon 이 생성될 부모 디렉토리')
+    .requiredOption('--out-root <dir>', 'behavior pack 폴더와 .mcpack 이 생성될 부모 디렉토리')
     .option('--pitch <number>', 'voxel 크기', parseFloat, 0.1)
     .option('--no-fill-interior', '메시 내부 채움 비활성화')
     .option('--block <id>', '모든 머티리얼 강제 단일 Java 블록 id (Bedrock 으로 변환됨)')

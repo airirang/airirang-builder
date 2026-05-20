@@ -2,7 +2,7 @@
 /**
  * airirang-builder-bedrock — Public library API.
  *
- * Bedrock Edition (.mcaddon) 출력 어댑터의 공개 진입점. Java 패키지와 같이
+ * Bedrock Edition (.mcpack) 출력 어댑터의 공개 진입점. Java 패키지와 같이
  * voxelize+greedy 는 `airirang-builder-core` 가, 패키징/블록 변환/fill 문법은
  * 본 패키지가 담당.
  */

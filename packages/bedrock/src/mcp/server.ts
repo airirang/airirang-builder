@@ -52,9 +52,9 @@ export function createServer(): McpServer {
     {
       capabilities: { tools: {} },
       instructions:
-        'AIrirang Builder (Bedrock) turns 3D meshes into Minecraft Bedrock .mcaddon behavior packs ' +
+        'AIrirang Builder (Bedrock) turns 3D meshes into Minecraft Bedrock .mcpack behavior packs ' +
         'via voxelization + greedy meshing. Call `quick-build` for the one-shot path ' +
-        '(preset or .obj → .mcaddon). Install: double-click the .mcaddon, activate in world ' +
+        '(preset or .obj → .mcpack). Install: double-click the .mcpack, activate in world ' +
         'Behavior Packs, then /function <functionId>. NOT AN OFFICIAL MINECRAFT PRODUCT.',
     },
   );

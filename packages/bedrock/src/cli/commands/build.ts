@@ -3,10 +3,10 @@
  * CLI subcommand — `build` (Bedrock).
  *
  * 프리셋 ID 또는 .obj 한 개를 받아 voxelize → greedy meshing → Bedrock /fill
- * 변환 → behavior pack 패키징(.mcaddon) 까지 한 번에 수행합니다. MCP `quick-build`
+ * 변환 → behavior pack 패키징(.mcpack) 까지 한 번에 수행합니다. MCP `quick-build`
  * 의 CLI 카운터파트.
  *
- * One-shot pipeline (preset/OBJ → Bedrock .mcaddon). The shell equivalent of
+ * One-shot pipeline (preset/OBJ → Bedrock .mcpack). The shell equivalent of
  * the bedrock `quick-build` MCP tool.
  */
 

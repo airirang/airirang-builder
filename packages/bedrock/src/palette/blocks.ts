@@ -102,6 +102,9 @@ export const JAVA_TO_BEDROCK: Readonly<Record<string, BedrockBlock>> = {
   // ── ground & misc (지면/자갈/흙 색 매칭) ────────────────────────────────────
   'minecraft:dirt': { id: 'minecraft:dirt' },
   'minecraft:gravel': { id: 'minecraft:gravel' },
+
+  // ── metal (랜드마크/타워 골조 — eiffel-lattice 등) ──────────────────────────
+  'minecraft:iron_block': { id: 'minecraft:iron_block' },
 };
 
 /**

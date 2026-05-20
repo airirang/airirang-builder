@@ -2,7 +2,7 @@
 
 [English](README.md) | **한국어**
 
-> **AI 자연어 한 줄로 마인크래프트 *베드락*에 정밀 건축물을 솟아오르게 — `.mcaddon` 더블클릭 한 번으로 설치.**
+> **AI 자연어 한 줄로 마인크래프트 *베드락*에 정밀 건축물을 솟아오르게 — `.mcpack` 더블클릭 한 번으로 설치.**
 
 > **NOT AN OFFICIAL MINECRAFT PRODUCT.**
 > **NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
@@ -12,7 +12,7 @@
 [![MCP](https://img.shields.io/badge/MCP-stdio-7C3AED.svg)](https://modelcontextprotocol.io)
 [![Bedrock](https://img.shields.io/badge/Minecraft-Bedrock%201.21%2B-1C8C3F.svg)](https://www.minecraft.net/)
 
-`airirang-builder-bedrock`은 [`airirang-builder`](https://www.npmjs.com/package/airirang-builder) (Java판)의 **베드락 에디션** 자매 패키지입니다. **3D 메시(.obj/.glb) → voxel → greedy `/fill` → behavior pack** 파이프라인 전체를 한 번의 호출로 압축해, 결과를 **더블클릭으로 설치되는 `.mcaddon`** 으로 떨어뜨립니다.
+`airirang-builder-bedrock`은 [`airirang-builder`](https://www.npmjs.com/package/airirang-builder) (Java판)의 **베드락 에디션** 자매 패키지입니다. **3D 메시(.obj/.glb) → voxel → greedy `/fill` → behavior pack** 파이프라인 전체를 한 번의 호출로 압축해, 결과를 **더블클릭으로 설치되는 `.mcpack`** 으로 떨어뜨립니다.
 
 베드락은 폰·태블릿·콘솔·윈도우 10/11에서 어린이 대다수가 실제로 플레이하는 버전입니다. JSON 설정도, `/reload`도, datapack 폴더 찾기도 없습니다 — **더블클릭 한 번**.
 
@@ -32,7 +32,7 @@ npm install -g airirang-builder-bedrock
 
 요구사항: **Node 20+**, 마인크래프트 **Bedrock Edition 1.21+** (Windows 10/11, 모바일, 콘솔, Education Edition).
 
-### 2. `.mcaddon` 만들기
+### 2. `.mcpack` 만들기
 
 두 가지 경로 — 하나 고르면 됩니다.
 
@@ -49,7 +49,7 @@ npx airirang-builder-bedrock build \
 
 ```
 out/airirang-house3/           ← behavior pack 폴더
-out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
+out/airirang-house3.mcpack    ← 더블클릭 설치 파일
 ```
 
 **경로 B — 임의의 MCP 클라이언트 (Claude · ChatGPT · Gemini · Cursor · VS Code …):**
@@ -69,13 +69,13 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 
 채팅창에 자연어 한 줄:
 
-> "house_3 프리셋을 베드락 .mcaddon으로 `./out` 에 빌드해줘."
+> "house_3 프리셋을 베드락 .mcpack으로 `./out` 에 빌드해줘."
 
-클라이언트는 `quick-build` MCP를 **1회** 호출하고 동일한 `.mcaddon`이 나옵니다.
+클라이언트는 `quick-build` MCP를 **1회** 호출하고 동일한 `.mcpack`이 나옵니다.
 
 ### 3. 마인크래프트(베드락)에서 설치
 
-1. `airirang-house3.mcaddon` 을 **더블클릭** → 마인크래프트(베드락)가 자동 임포트.
+1. `airirang-house3.mcpack` 을 **더블클릭** → 마인크래프트(베드락)가 자동 임포트.
 2. 월드 생성/편집 → **Behavior Packs** → *airirang-house3* 활성화.
 3. 게임 내:
 
@@ -89,7 +89,7 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 
 ## 왜 베드락은 별도 패키지인가
 
-베드락과 자바는 파일 포맷이 다른 별개의 게임입니다 (`.mcaddon` vs datapack, `manifest.json` vs `pack.mcmeta`, `/fill` 문법 차이). 그래서 **두 개의 npm 패키지**로 분리해 자기 에디션만 설치하면 되도록 했습니다. voxelizer / greedy mesher는 공유 `airirang-builder-core`에 한 벌만 두고 자동으로 끌려옵니다.
+베드락과 자바는 파일 포맷이 다른 별개의 게임입니다 (`.mcpack` vs datapack, `manifest.json` vs `pack.mcmeta`, `/fill` 문법 차이). 그래서 **두 개의 npm 패키지**로 분리해 자기 에디션만 설치하면 되도록 했습니다. voxelizer / greedy mesher는 공유 `airirang-builder-core`에 한 벌만 두고 자동으로 끌려옵니다.
 
 | 어느 에디션을 플레이하시나요 | 설치 |
 |---|---|
@@ -105,7 +105,7 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 | # | 도구 | 역할 |
 |---|---|---|
 | 1 | `list-presets` | 동봉된 Quaternius CC0 프리셋 5개 카탈로그 반환. |
-| 2 | **`quick-build`** | **위 파이프라인 전체를 1회 호출로**: preset/OBJ/GLB → voxelize → greedy → Bedrock `/fill` → `.mcaddon`. |
+| 2 | **`quick-build`** | **위 파이프라인 전체를 1회 호출로**: preset/OBJ/GLB → voxelize → greedy → Bedrock `/fill` → `.mcpack`. |
 
 ### `quick-build` 예제 호출
 
@@ -131,11 +131,11 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 {
   "ok": true,
   "behaviorPackRoot": "./out/airirang-house3",
-  "mcaddonPath": "./out/airirang-house3.mcaddon",
+  "mcpackPath": "./out/airirang-house3.mcpack",
   "lineCount": 187,
   "cuboidCount": 184,
   "voxelCount": 9421,
-  "installMessage": "airirang-house3.mcaddon 더블클릭 → 월드 Behavior Packs 활성화 → /function airirang-house3"
+  "installMessage": "airirang-house3.mcpack 더블클릭 → 월드 Behavior Packs 활성화 → /function airirang-house3"
 }
 ```
 
@@ -149,7 +149,7 @@ out/airirang-house3.mcaddon    ← 더블클릭 설치 파일
 # 프리셋 카탈로그
 npx airirang-builder-bedrock list-presets
 
-# preset/OBJ → 바로 설치 가능한 .mcaddon
+# preset/OBJ → 바로 설치 가능한 .mcpack
 npx airirang-builder-bedrock build \
   --preset house_3 \
   --name airirang-house3 \

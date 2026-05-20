@@ -2,9 +2,9 @@
 /**
  * MCP tool — quick-build (Bedrock).
  * 단 1번 호출로 전체 파이프라인 수행:
- *   load → voxelize → greedy → Bedrock fill → behavior pack(.mcaddon).
+ *   load → voxelize → greedy → Bedrock fill → behavior pack(.mcpack).
  *
- * Java quick-build 와 동일한 입력 표면을 노출하되 출력은 Bedrock `.mcaddon`.
+ * Java quick-build 와 동일한 입력 표면을 노출하되 출력은 Bedrock `.mcpack`.
  * mcVersion 대신 minEngineVersion (3-tuple semver) 을 사용.
  */
 
@@ -34,10 +34,10 @@ import { safeHandler, toolOk } from './shared.js';
 export const name = 'quick-build';
 
 export const config = {
-  title: 'One-shot: voxelize → greedy → Bedrock fill → .mcaddon',
+  title: 'One-shot: voxelize → greedy → Bedrock fill → .mcpack',
   description:
     '프리셋 ID 또는 .obj/.glb/.gltf 경로를 받아 voxelize + greedy meshing + Bedrock /fill 변환 + ' +
-    'behavior pack(.mcaddon) 빌드를 한 번에 수행합니다. presetId 와 objPath 중 정확히 하나를 ' +
+    'behavior pack(.mcpack) 빌드를 한 번에 수행합니다. presetId 와 objPath 중 정확히 하나를 ' +
     '제공하세요. End-to-end Bedrock pipeline in a single MCP call.',
   inputSchema: {
     presetId: z
@@ -48,7 +48,7 @@ export const config = {
       .string()
       .optional()
       .describe('사용자 .obj / .glb / .gltf 경로. presetId 와 둘 중 하나만.'),
-    name: z.string().describe('패키지 이름 (예: "airirang-house3") — 폴더+.mcaddon 파일명'),
+    name: z.string().describe('패키지 이름 (예: "airirang-house3") — 폴더+.mcpack 파일명'),
     namespace: z
       .string()
       .optional()
@@ -61,7 +61,7 @@ export const config = {
       .tuple([z.number().int().nonnegative(), z.number().int().nonnegative(), z.number().int().nonnegative()])
       .optional()
       .describe('Bedrock min_engine_version 3-tuple. 기본 [1,21,0].'),
-    outRoot: z.string().describe('behavior pack 폴더와 .mcaddon 이 생성될 부모 디렉토리'),
+    outRoot: z.string().describe('behavior pack 폴더와 .mcpack 이 생성될 부모 디렉토리'),
     pitch: z.number().positive().optional().describe('voxel 크기. 기본 0.1.'),
     scale: z
       .number()
@@ -81,7 +81,7 @@ export const config = {
   outputSchema: {
     ok: z.boolean(),
     packRoot: z.string(),
-    mcaddonPath: z.string(),
+    mcpackPath: z.string(),
     functionPath: z.string(),
     lineCount: z.number(),
     cuboidCount: z.number(),
@@ -161,10 +161,10 @@ export const handler = safeHandler(async (args: Args) => {
   const installMessage = formatInstallMessage(build, functionId);
 
   return toolOk(
-    `quick-build ok: ${voxResult.indices.length} voxels → ${cuboids.length} cuboids → ${lines.length} lines → .mcaddon ${build.mcaddonPath}`,
+    `quick-build ok: ${voxResult.indices.length} voxels → ${cuboids.length} cuboids → ${lines.length} lines → .mcpack ${build.mcpackPath}`,
     {
       packRoot: build.packRoot,
-      mcaddonPath: build.mcaddonPath,
+      mcpackPath: build.mcpackPath,
       functionPath: build.functionPath,
       lineCount: build.lineCount,
       cuboidCount: cuboids.length,

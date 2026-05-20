@@ -20,6 +20,14 @@ This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ---
 
+## [0.2.3] — 2026-05-21 (airirang-builder-bedrock)
+
+### Fixed
+
+- **Bedrock pack failed to import into Minecraft** ("불러오기 오류" / import error). The builder emitted a single behavior pack zipped as `.mcaddon`, but a single pack with `manifest.json` at the zip root must be a **`.mcpack`** — `.mcaddon` is for multi-pack bundles. Output is now `.mcpack`; install messages, README, and the `BuildBehaviorPackResult.mcpackPath` field updated accordingly. Caught by real in-game dogfood.
+
+---
+
 ## [0.2.1] — 2026-05-21
 
 ### Fixed

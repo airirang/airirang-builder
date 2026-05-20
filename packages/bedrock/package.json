@@ -1,7 +1,7 @@
 {
   "name": "airirang-builder-bedrock",
-  "version": "0.2.1",
-  "description": "AI-driven precise Minecraft (Bedrock Edition) building via 3D mesh voxelization + /fill greedy meshing + .mcaddon behavior pack. MCP server. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
+  "version": "0.2.3",
+  "description": "AI-driven precise Minecraft (Bedrock Edition) building via 3D mesh voxelization + /fill greedy meshing + .mcpack behavior pack. MCP server. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
   "license": "Apache-2.0",
   "private": false,
   "type": "module",
@@ -18,7 +18,7 @@
   "keywords": [
     "minecraft",
     "bedrock",
-    "mcaddon",
+    "mcpack",
     "mcp",
     "voxelizer",
     "ai",
