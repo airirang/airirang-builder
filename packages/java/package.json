@@ -1,0 +1,82 @@
+{
+  "name": "airirang-builder",
+  "version": "0.1.1",
+  "description": "AI-driven precise Minecraft building via 3D mesh voxelization + /fill greedy meshing + datapack. MCP server. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "type": "module",
+  "author": "AIrirang Studio <skseo@airirang.co.kr>",
+  "homepage": "https://github.com/airirang/airirang-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airirang/airirang-builder.git",
+    "directory": "packages/java"
+  },
+  "bugs": {
+    "url": "https://github.com/airirang/airirang-builder/issues"
+  },
+  "keywords": [
+    "minecraft",
+    "mcp",
+    "voxelizer",
+    "ai",
+    "building",
+    "claude",
+    "airirang"
+  ],
+  "files": [
+    "dist/",
+    "src/presets/data/",
+    "README.md",
+    "LICENSE",
+    "LICENSE-COMMERCIAL.md"
+  ],
+  "bin": {
+    "airirang-builder": "dist/cli/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./voxelizer": {
+      "types": "./dist/voxelizer-reexport.d.ts",
+      "import": "./dist/voxelizer-reexport.js"
+    },
+    "./greedy-meshing": {
+      "types": "./dist/greedy-meshing-reexport.d.ts",
+      "import": "./dist/greedy-meshing-reexport.js"
+    },
+    "./palette": {
+      "types": "./dist/palette-reexport.d.ts",
+      "import": "./dist/palette-reexport.js"
+    },
+    "./datapack": {
+      "types": "./dist/datapack/index.d.ts",
+      "import": "./dist/datapack/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/index.d.ts",
+      "import": "./dist/mcp/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli/bin.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@airirang/builder-core": "0.1.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "commander": "^12.0.0",
+    "tsx": "^4.19.0",
+    "zod": "^4.4.3"
+  }
+}

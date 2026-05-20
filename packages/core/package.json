@@ -1,0 +1,66 @@
+{
+  "name": "@airirang/builder-core",
+  "version": "0.1.0",
+  "description": "Edition-agnostic core engine (voxelizer + greedy meshing + palette + presets) shared by airirang-builder Java/Bedrock packages. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "type": "module",
+  "author": "AIrirang Studio <skseo@airirang.co.kr>",
+  "homepage": "https://github.com/airirang/airirang-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airirang/airirang-builder.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/airirang/airirang-builder/issues"
+  },
+  "keywords": [
+    "minecraft",
+    "voxelizer",
+    "greedy-meshing",
+    "airirang"
+  ],
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "LICENSE-COMMERCIAL.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./voxelizer": {
+      "types": "./dist/voxelizer/index.d.ts",
+      "import": "./dist/voxelizer/index.js"
+    },
+    "./greedy-meshing": {
+      "types": "./dist/greedy-meshing/index.d.ts",
+      "import": "./dist/greedy-meshing/index.js"
+    },
+    "./palette": {
+      "types": "./dist/palette/index.d.ts",
+      "import": "./dist/palette/index.js"
+    },
+    "./presets": {
+      "types": "./dist/presets/index.d.ts",
+      "import": "./dist/presets/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "^4.3.0",
+    "@gltf-transform/functions": "^4.3.0",
+    "jimp": "^1.6.1",
+    "obj-file-parser": "^0.6.2",
+    "three": "^0.169.0"
+  }
+}

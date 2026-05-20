@@ -9,7 +9,7 @@ on:
 
 jobs:
   publish:
-    name: Build & Publish
+    name: Build & Publish (airirang-builder)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,19 +26,23 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (workspaces)
         run: npm install
 
-      - name: Build (tsc)
-        run: npm run build
+      - name: Build (tsc) — core then java
+        run: |
+          npm run build --workspace=@airirang/builder-core
+          npm run build --workspace=airirang-builder
 
-      - name: Test (vitest)
-        run: npm test
+      - name: Test (vitest) — airirang-builder
+        run: npm test --workspace=airirang-builder
 
-      - name: npm pack --dry-run
+      - name: npm pack --dry-run (airirang-builder)
+        working-directory: packages/java
         run: npm pack --dry-run
 
-      - name: Publish to npm (skip if version already published)
+      - name: Publish airirang-builder to npm (skip if version already published)
+        working-directory: packages/java
         run: |
           PKG="$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")"
           if npm view "$PKG" version >/dev/null 2>&1; then

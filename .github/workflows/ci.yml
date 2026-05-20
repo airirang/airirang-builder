@@ -25,14 +25,17 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (workspaces)
         run: npm install
 
-      - name: Build (tsc)
-        run: npm run build
+      - name: Build (tsc) — core then java
+        run: |
+          npm run build --workspace=@airirang/builder-core
+          npm run build --workspace=airirang-builder
 
-      - name: Test (vitest)
-        run: npm test
+      - name: Test (vitest) — airirang-builder
+        run: npm test --workspace=airirang-builder
 
-      - name: npm pack --dry-run
+      - name: npm pack --dry-run (airirang-builder)
+        working-directory: packages/java
         run: npm pack --dry-run
