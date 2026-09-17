@@ -28,14 +28,21 @@ jobs:
       - name: Install dependencies (workspaces)
         run: npm install
 
-      - name: Build (tsc) — core then java
+      - name: Build (tsc) — core then editions
         run: |
-          npm run build --workspace=@airirang/builder-core
+          npm run build --workspace=airirang-builder-core
           npm run build --workspace=airirang-builder
+          npm run build --workspace=airirang-builder-bedrock
 
-      - name: Test (vitest) — airirang-builder
-        run: npm test --workspace=airirang-builder
+      - name: Lint (eslint)
+        run: npm run lint
 
-      - name: npm pack --dry-run (airirang-builder)
-        working-directory: packages/java
-        run: npm pack --dry-run
+      - name: Test (vitest) — core + java + bedrock
+        run: |
+          npm test --workspace=airirang-builder-core
+          npm test --workspace=airirang-builder
+          npm test --workspace=airirang-builder-bedrock
+
+      - name: npm pack --dry-run (core + java + bedrock)
+        run: |
+          for d in core java bedrock; do (cd "packages/$d" && npm pack --dry-run); done
