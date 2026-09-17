@@ -79,12 +79,6 @@ export {
 export type { PaletteEntry, Lab, Rgb } from './palette/index.js';
 
 // ---------------------------------------------------------------------------
-// Photo statue — local JPEG/PNG/WebP → fixed-depth coloured voxel relief
-// ---------------------------------------------------------------------------
-export { photoToVoxelGrid, photoToVoxelGridFromRgba } from './photo-statue.js';
-export type { PhotoStatueOptions, RgbaImage } from './photo-statue.js';
-
-// ---------------------------------------------------------------------------
 // Presets — bundled preset metadata (asset files ship with the edition package)
 // ---------------------------------------------------------------------------
 export {

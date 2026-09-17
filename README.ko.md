@@ -144,18 +144,6 @@ npx airirang-builder build path/to/mesh.obj \
 npx airirang-builder serve
 ```
 
-### 사진으로 전면형 조형물 만들기 (로컬·API 비용 없음)
-
-사진의 보이는 색상과 윤곽을 Minecraft 블록으로 바꾸고 일정 두께를 주는
-전면형 조형물 기능입니다. 실제 보이지 않는 옆·뒤 모습을 AI로 추론하지 않으므로
-외부 API나 GPU가 필요 없습니다. 인물 윤곽만 만들려면 배경을 지운 투명 PNG를
-사용하세요. JPEG는 사진 전체가 돌출된 포토 릴리프로 변환됩니다.
-
-```bash
-npx airirang-builder photo-statue profile.png \
-  --width 32 --depth 4 --out profile-statue.mcfunction
-```
-
 ---
 
 ## 차별점

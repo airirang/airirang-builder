@@ -23,7 +23,6 @@ import { runListPresets } from './commands/list-presets.js';
 import { runServe } from './commands/serve.js';
 import { runVoxelize } from './commands/voxelize.js';
 import type { VoxelizeCommandOptions } from './commands/voxelize.js';
-import { runPhotoStatue } from './commands/photo-statue.js';
 import type { McVersion } from '../types.js';
 
 const DISCLAIMER =
@@ -89,40 +88,6 @@ export function createProgram(): Command {
           ...opts,
           up: opts.up as VoxelizeCommandOptions['up'],
         });
-      },
-    );
-
-  program
-    .command('photo-statue')
-    .argument('<image>', 'JPEG·PNG·WebP 사진 경로 (투명 PNG 권장)')
-    .description('사진 → 전면형 색상 블록 조형물 .mcfunction (API 없음)')
-    .option('--width <blocks>', '가로 블록 수', (value) => Number.parseInt(value, 10), 32)
-    .option('--depth <blocks>', '전면형 조형물 두께', (value) => Number.parseInt(value, 10), 4)
-    .option('--out <path>', '출력 .mcfunction 경로')
-    .option(
-      '--alpha-threshold <0-255>',
-      '이 값보다 투명한 픽셀 제외',
-      (value) => Number.parseInt(value, 10),
-      16,
-    )
-    .option(
-      '--white-threshold <0-255>',
-      '이 값 이상인 흰 픽셀 제외 (256=비활성)',
-      (value) => Number.parseInt(value, 10),
-      256,
-    )
-    .action(
-      async (
-        image: string,
-        opts: {
-          width: number;
-          depth: number;
-          out?: string;
-          alphaThreshold: number;
-          whiteThreshold: number;
-        },
-      ) => {
-        await runPhotoStatue(image, opts);
       },
     );
 
